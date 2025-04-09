@@ -17,10 +17,10 @@ const Navbar = () => {
             <div className={styles.logo}>R.L. Devlog</div>
             <div className={styles.social}>
                 <ThemeToggle />
-                <Image src="/facebook.png" alt="facebook logo" width={24} height={24} />
-                <Image src="/instagram.png" alt="instagram logo" width={24} height={24} />
-                <Image src="/tiktok.png" alt="tiktok logo" width={24} height={24} />
-                <Image src="/youtube.png" alt="youtube logo" width={24} height={24} />
+                <Image src="/images/social/facebook.png" alt="facebook logo" width={24} height={24} />
+                <Image src="/images/social/instagram.png" alt="instagram logo" width={24} height={24} />
+                <Image src="/images/social/tiktok.png" alt="tiktok logo" width={24} height={24} />
+                <Image src="/images/social/youtube.png" alt="youtube logo" width={24} height={24} />
             </div>
         </div>
     )
