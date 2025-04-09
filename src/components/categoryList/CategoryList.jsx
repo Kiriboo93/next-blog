@@ -9,16 +9,16 @@ const CategoryList = () => {
             <h1 className={styles.title}>Popular Categories</h1>
             <div className={styles.categories}>
                 <Link href="/blog?cat=hempidle" className={`${styles.category} ${styles.hempidle}`}>
-                    <Image src="/images/categories/style.png" alt="" width={32} height={32} className={styles.image} />
-                    Hempidle
+                    <Image src="/images/categories/style.png" alt="" width={75} height={50} className={styles.image} />
+                    <b>Hempidle</b>
                 </Link>
                 <Link href="/blog?cat=dipets" className={`${styles.category} ${styles.dipets}`}>
-                    <Image src="/images/categories/dipets.jpg" alt="" width={32} height={32} className={styles.image} />
-                    Dipets
+                    <Image src="/images/categories/dipets.jpg" alt="" width={75} height={50} className={styles.image} />
+                    <b>Dipets</b>
                 </Link>
                 <Link href="/blog?cat=tales" className={`${styles.category} ${styles.tales}`}>
-                    <Image src="/images/categories/tales.jpg" alt="" width={32} height={32} className={styles.image} />
-                    Tales from Windy Meadow
+                    <Image src="/images/categories/tales.jpg" alt="" width={75} height={50} className={styles.image} />
+                    <b>Tales from Windy Meadow</b>
                 </Link>
             </div>
         </div>
