@@ -24,3 +24,9 @@
 .categoryItem.tales {
     background-color: plum;
 }
+
+@media screen and (max-width: 1280px) {
+    .categoryItem {
+        font-size: .8rem;
+    }
+}
