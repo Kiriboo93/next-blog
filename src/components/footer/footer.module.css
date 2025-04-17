@@ -1,5 +1,5 @@
 .container {
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 1rem 0;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@
 
 .links {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     flex: 1;
     gap: 6rem;
 }
