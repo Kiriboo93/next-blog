@@ -164,6 +164,33 @@ exports.Prisma.AuthenticatorScalarFieldEnum = {
   transports: 'transports'
 };
 
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  title: 'title',
+  img: 'img'
+};
+
+exports.Prisma.PostScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  slug: 'slug',
+  title: 'title',
+  desc: 'desc',
+  img: 'img',
+  views: 'views',
+  catSlug: 'catSlug',
+  userEmail: 'userEmail'
+};
+
+exports.Prisma.CommentScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  desc: 'desc',
+  userEmail: 'userEmail',
+  postSlug: 'postSlug'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -180,7 +207,10 @@ exports.Prisma.ModelName = {
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
-  Authenticator: 'Authenticator'
+  Authenticator: 'Authenticator',
+  Category: 'Category',
+  Post: 'Post',
+  Comment: 'Comment'
 };
 
 /**
