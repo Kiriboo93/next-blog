@@ -6,16 +6,20 @@ export const GET = async (req) => {
     const { searchParams } = new URL(req.url);
 
     const page = parseInt(searchParams.get("page"));
+    const cat = searchParams.get("cat");
 
     const query = {
         take: POSTS_PER_PAGE,
-        skip: POSTS_PER_PAGE * (page - 1 > 0 ? page - 1 : 0)
+        skip: POSTS_PER_PAGE * (page - 1 > 0 ? page - 1 : 0),
+        where: {
+            ...(cat && { catSlug: cat }),
+        },
     }
 
     try {
         const [posts, count] = await prisma.$transaction([
             prisma.post.findMany(query),
-            prisma.post.count()
+            prisma.post.count({ where: query.where })
         ]);
         return new NextResponse(
             JSON.stringify({ posts, count })

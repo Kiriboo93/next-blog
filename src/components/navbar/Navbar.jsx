@@ -13,7 +13,7 @@ const Navbar = () => {
                 <Link href="/" className={styles.link}>About</Link>
                 <AuthLinks />
             </div>
-            <div className={styles.logo}><b><u>R.L. Devlog</u></b></div>
+            <div className={styles.logo}><b><u>R.L. Dev Diary</u></b></div>
             <div className={styles.social}>
                 <ThemeToggle />
                 <div className={styles.socialContainer}>
