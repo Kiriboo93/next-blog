@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./card.module.css";
 import Image from "next/image";
+import { removeHtmlTags } from "@/utils/utils";
 
 const Card = ({ item }) => {
     return (
@@ -18,10 +19,7 @@ const Card = ({ item }) => {
                     <h1>{item.title}</h1>
                 </Link>
                 <p className={styles.description}>
-                    Example of a long text showing all the content the post has.
-                    Example of a long text showing all the content the post has.
-                    Example of a long text showing all the content the post has.
-                    Example of a long text showing all the content the post has.
+                    {removeHtmlTags(item.desc.slice(0, 200)) + "..."}
                 </p>
                 <Link href="/" className={styles.link}>Read More</Link>
             </div>
