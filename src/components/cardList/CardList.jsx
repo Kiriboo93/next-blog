@@ -18,8 +18,8 @@ const getData = async (page) => {
 const CardList = async ({ page }) => {
   const { posts, count } = await getData(page);
 
-  const hasPrev = page != 0;
-  const hasNext = (page == 0 ? POSTS_PER_PAGE : POSTS_PER_PAGE * (page - 1)) + POSTS_PER_PAGE < count;
+  const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
+  const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < count;
 
   return (
     <div className={styles.container}>
