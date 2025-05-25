@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from "./card.module.css";
 import Image from "next/image";
 
-const Card = () => {
+const Card = ({ item }) => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} key={item.id}>
             <div className={styles.imgContainer}>
                 <Image src="/p1.jpeg" alt="" fill className={styles.image} />
             </div>
@@ -15,7 +15,7 @@ const Card = () => {
                     <span className={styles.category}>CATEGORY</span>
                 </div>
                 <Link href="/">
-                    <h1>Title example</h1>
+                    <h1>{item.title}</h1>
                 </Link>
                 <p className={styles.description}>
                     Example of a long text showing all the content the post has.

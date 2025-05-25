@@ -11,15 +11,15 @@ export const GET = async (req) => {
     try {
         const posts = await prisma.post.findMany({
             take: POST_PER_PAGE,
-            skip: POST_PER_PAGE * (page - 1)
+            skip: POST_PER_PAGE * (page - 1 > 0 ? page - 1 : 0)
         });
         return new NextResponse(
-            JSON.stringify({ posts }, () => { return { status: 200 } })
+            JSON.stringify({ posts })
         );
     } catch (err) {
         console.log(err);
         return new NextResponse(
-            JSON.stringify({ message: "Something went wrong!" }, () => { return { status: 500 } })
+            JSON.stringify({ message: "Something went wrong!" })
         );
     }
 }
