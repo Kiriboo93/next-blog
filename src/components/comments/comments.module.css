@@ -4,6 +4,7 @@
 
 .title {
     color: var(--softTextColor);
+    margin-top: 8rem;
     margin-bottom: 2rem;
 }
 
@@ -32,39 +33,4 @@
 
 .comments {
     margin: 3rem 0;
-}
-
-.comment {
-    margin-bottom: 3rem;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
-}
-
-.image {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.userInfo {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem;
-    color: var(--softTextColor);
-}
-
-.username {
-    font-weight: 500;
-}
-
-.date {
-    font-size: .9rem;
-}
-
-.desc {
-    font-size: 1.2rem;
 }

@@ -1,4 +1,5 @@
-export const POSTS_PER_PAGE = 2;
+export const SERVER_URL = "http://localhost:3000/";
+export const POSTS_PER_PAGE = 3;
 
 /**
  * Removes html tags from a String.
