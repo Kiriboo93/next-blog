@@ -6,11 +6,12 @@ import { useSession } from "next-auth/react";
 import { useFetchComments } from "@/utils/hooks";
 import Comment from "../comment/Comment";
 
-const Comments = (slug) => {
+const Comments = ({ postSlug }) => {
+    // Hook for the current session.
     const status = useSession();
 
     // Custom hook to get comments.
-    const { comments, isLoading } = useFetchComments(slug);
+    const { comments, isLoading } = useFetchComments(postSlug);
 
     return <div className={styles.container}>
         <h1 className={styles.title}>Comments</h1>
@@ -22,7 +23,7 @@ const Comments = (slug) => {
         }
         <div className={styles.comments}>
             {isLoading ? "loading" : (comments.map((comment) => (
-                <Comment comment={comment} />
+                <Comment comment={comment} key={comment.id} />
             )))}
         </div>
     </div >
