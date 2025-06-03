@@ -1,7 +1,10 @@
-import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
 
+/**
+ * Component Featured to draw featured post.
+ * @returns Component with featured post.
+ */
 const Featured = () => {
     return (
         <div className={styles.container}>

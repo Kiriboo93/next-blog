@@ -3,7 +3,12 @@
 import { useRouter } from "next/navigation";
 import styles from "./pagination.module.css";
 
-const Pagination = ({ page, hasPrev, hasNext }) => {
+/**
+ * Component Pagination to draw buttons to change the page of posts.
+ * @param {*} param0 with page, if it has to draw prev button and the next button.
+ * @returns Component with pagination for posts.
+ */
+const Pagination = ({ page, hasPrev, hasNext }: { page: number, hasPrev: boolean, hasNext: boolean }) => {
     const router = useRouter();
 
     return (

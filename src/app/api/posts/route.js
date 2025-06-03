@@ -1,7 +1,12 @@
-import { prisma } from "@/utils/connect";
+import { prisma } from "../../../utils/connect";
 import { NextResponse } from "next/server";
-import { POSTS_PER_PAGE } from "@/utils/utils";
+import { POSTS_PER_PAGE } from "../../../utils/utils";
 
+/**
+ * Service to get list of post paginated.
+ * @param {*} req param to get url search params.
+ * @returns A new page of posts if correct, error if not.
+ */
 export const GET = async (req) => {
     const { searchParams } = new URL(req.url);
 

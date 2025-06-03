@@ -3,8 +3,10 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 
+// Create theme context.
 export const ThemeContext = createContext({ theme: "dark", toggle: null });
 
+// Gets context from localStorage if available and else, light as default.
 const getFromLocalStorage = () => {
     if (typeof window !== "undefined") {
         const value = localStorage.getItem("theme");
@@ -12,8 +14,9 @@ const getFromLocalStorage = () => {
     }
 }
 
+// Theme context provider with function to change the theme on toggle.
 export const ThemeContextProvider = ({ children }) => {
-    const [theme, setTheme] = useState(() => {
+    const [theme, setTheme] = useState<string>(() => {
         return getFromLocalStorage();
     });
 

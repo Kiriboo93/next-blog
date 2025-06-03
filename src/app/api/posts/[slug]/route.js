@@ -1,6 +1,12 @@
-import { prisma } from "@/utils/connect";
+import { prisma } from "../../../../utils/connect";
 import { NextResponse } from "next/server";
 
+/**
+ * Service to find an specific post.
+ * @param {*} req unused param.
+ * @param param1 param to get the post by slug.
+ * @returns JSON with info about the post if correct, error if not.
+ */
 export const GET = async (req, { params }) => {
     const { slug } = params;
 

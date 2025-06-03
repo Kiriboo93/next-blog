@@ -1,23 +1,19 @@
 import Image from "next/image";
 import styles from "./singlePage.module.css"
-import Comments from "@/components/comments/Comments";
+import Comments from "../../../components/comments/Comments";
+import { getPost } from "../../../utils/services";
+import { SearchParams } from "../../../utils/types";
 
-const getData = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-        cache: "no-store"
-    });
-
-    if (!res.ok) {
-        throw new Error("Failed");
-    }
-
-    return res.json();
-}
-
-const SinglePage = async ({ params }) => {
+/**
+ * SinglePage to draw specific post.
+ * @param {*} param0 to get slug for the post.
+ * @returns SinglePage for specific post.
+ */
+const SinglePage = async ({ params }: { params: SearchParams }) => {
+    // Slug to get specific post.
     const { slug } = params;
-
-    const data = await getData(slug);
+    // Post information.
+    const data = await getPost(slug);
 
     return <div className={styles.container}>
         <div className={styles.infoContainer}>
@@ -25,7 +21,7 @@ const SinglePage = async ({ params }) => {
                 <h1 className={styles.title}>{data?.title}</h1>
                 <div className={styles.user}>
                     {data?.user.image && (<div className={styles.userImgContainer}>
-                        <Image src={data.user.image} alt="Roberto Image" fill className={styles.avatar} />
+                        <Image src={data.user.image} alt="Roberto Image" fill sizes="48px" className={styles.avatar} />
                     </div>)}
                     <div className={styles.userTextContainer}>
                         <span className={styles.username}>{data?.user.name}</span>

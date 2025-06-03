@@ -4,8 +4,12 @@ import { signIn, useSession } from "next-auth/react";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
 
+/**
+ * LoginPage page with buttons to log in with Google and Github.
+ * @returns Page with login buttons from Google and Github.
+ */
 const LoginPage = () => {
-    const { data, status } = useSession();
+    const { status } = useSession();
     const router = useRouter();
 
     if (status === "loading") {
@@ -21,7 +25,6 @@ const LoginPage = () => {
                 Sign in with Google
             </div>
             <div className={styles.socialButton}>Sign in with Github</div>
-            <div className={styles.socialButton}>Sign in with Facebook</div>
         </div>
     </div>
 }

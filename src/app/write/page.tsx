@@ -7,12 +7,21 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
+/**
+ * WritePage to write a new post.
+ * @returns Page to write a new post.
+ */
 const WritePage = () => {
-    const { status } = useSession();
-    const router = useRouter();
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState("");
+    // Status of the active session to check if logged in.
+    const { status }: { status: String } = useSession();
+    // Router to change page.
+    const router: AppRouterInstance = useRouter();
+    // Boolean to show or hide buttons.
+    const [open, setOpen] = useState<boolean>(false);
+    // Variable to save post content.
+    const [value, setValue] = useState<ReactQuill.Value>("");
 
     if (status === "loading") {
         return <div className={styles.loading}>Loading...</div>

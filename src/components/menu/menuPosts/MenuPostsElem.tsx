@@ -2,6 +2,11 @@ import styles from "./menuPostsElem.module.css"
 import Link from "next/link";
 import Image from "next/image";
 
+/**
+ * Component MenuPostsElem to draw posts in the right menu.
+ * @param param0 with boolean to draw image or not.
+ * @returns Component MenuPosts with posts for the right menu.
+ */
 const MenuPostsElem = ({ withImage }) => {
     return (
         <div className={styles.items}>
