@@ -4,4 +4,4 @@ Blog about game development.
 
 ## Technologies
 
-Learning project developed with React (Next.js, Typescript, JavaScript, HTML, CSS).
+Learning project developed with React (Next.js, Typescript, JavaScript, HTML, CSS, Prisma and MongoDB).
