@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+
+.wrapper {
+    background-color: var(--softBg);
+    padding: 7rem 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    border-radius: .5rem;
+}
+
+.socialButton {
+    padding: 1.2rem;
+    border-radius: .3rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialButton:first-child {
+    background-color: #ff5555;
+}
+
+.socialButton:nth-child(2) {
+    background-color: #111;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 4rem 6rem;
+    }
+
+    .socialButton {
+        font-weight: 400;
+        font-size: .8rem;
+    }
+}

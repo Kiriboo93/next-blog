@@ -5,11 +5,20 @@
     height: 6.25rem;
 }
 
+.socialContainer {
+    display: flex;
+    background-color: azure;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0 1rem;
+    padding: .2rem;
+    border-radius: .5rem;
+}
+
 .social {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0.625rem;
     flex: 1;
 }
 
@@ -27,7 +36,7 @@
     font-size: 1.1rem;
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1280px) {
     .logo {
         font-size: 1.8rem;
     }
@@ -38,25 +47,26 @@
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     .social {
         display: none;
     }
 
     .logo {
-        text-align: right; 
+        text-align: center;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .logo {
         font-size: 1.5rem;
     }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
     .links {
         justify-content: flex-start;
+        flex: .2;
     }
 
     .link {

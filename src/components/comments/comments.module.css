@@ -1,0 +1,36 @@
+.container {
+    margin-top: 3rem;
+}
+
+.title {
+    color: var(--softTextColor);
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+.write {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.input {
+    padding: 1.2rem;
+    width: 100%;
+    border-radius: .3rem;
+}
+
+.button {
+    padding: 1rem 1.2rem;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+.comments {
+    margin: 3rem 0;
+}

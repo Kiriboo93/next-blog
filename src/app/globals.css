@@ -1,8 +1,8 @@
 :root {
-    --bg: azure;
+    --bg: #f7edd5;
     --textColor: black;
     --softBg: #f0f0f0;
-    --softTextColor: #626262;
+    --softTextColor: #3d3d3d;
 }
 
 * {
@@ -29,10 +29,10 @@ a {
 }
 
 .light {
-    --bg: azure;
+    --bg: #f7edd5;
     --textColor: black;
     --softBg: #f0f0f0;
-    --softTextColor: #626262;
+    --softTextColor: #3d3d3d;
 }
 
 .container {
@@ -46,6 +46,26 @@ a {
     margin-left: auto;
     margin-right: auto;
     padding: 0 80px;
+}
+
+.ql-container {
+    font-size: 1.8rem;
+}
+
+.quill>.ql-container>.ql-editor.ql-blank::before {
+    color: #b3b3b1
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+ul {
+    margin-bottom: 3rem;
+}
+
+li {
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1536px) {

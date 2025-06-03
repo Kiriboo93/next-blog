@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 
-.burger {
+.hamburger {
     width: 1.2rem;
     height: 1rem;
     display: none;
@@ -32,7 +32,7 @@
     font-size: 1.8rem;
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
     .burger {
         display: flex;
     }
