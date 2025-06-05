@@ -3,6 +3,7 @@
 import { signIn, useSession } from "next-auth/react";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 /**
  * LoginPage page with buttons to log in with Google and Github.
@@ -22,9 +23,13 @@ const LoginPage = () => {
     return <div className={styles.container}>
         <div className={styles.wrapper}>
             <div className={styles.socialButton} onClick={() => signIn("google")}>
+                <Image src="/images/components/google.png" alt="Google logo" width={40} height={40} />
                 Sign in with Google
             </div>
-            <div className={styles.socialButton}>Sign in with Github</div>
+            <div className={styles.socialButton} onClick={() => signIn("github")}>
+                <Image src="/images/components/github.png" alt="Github logo" width={40} height={40} />
+                Sign in with Github
+            </div>
         </div>
     </div>
 }

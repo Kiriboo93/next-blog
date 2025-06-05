@@ -17,7 +17,8 @@
 .socialButton {
     padding: 1.2rem;
     border-radius: .3rem;
-    border: none;
+    gap: .5rem;
+    border: 1px solid lightgray;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -27,11 +28,11 @@
 }
 
 .socialButton:first-child {
-    background-color: #ff5555;
+    background-color: #d86969;
 }
 
 .socialButton:nth-child(2) {
-    background-color: #111;
+    background-color: #242424;
 }
 
 @media screen and (max-width: 768px) {

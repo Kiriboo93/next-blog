@@ -13,14 +13,13 @@ const AuthLinks = () => {
     // Variable to store if hamburger UI is open or closed.
     const [open, setOpen] = useState<boolean>(false);
     // Status of the session to know if logged in or not.
-    const { status }: { status: String } = useSession();
+    const session = useSession();
 
     return <>
-        {status === "unauthenticated" ? (
+        {session.status === "unauthenticated" ? (
             <Link href="/login" className={styles.link}>Login</Link>
         ) : (
             <>
-                <Link href="/write" className={styles.link}>Write</Link>
                 <span className={styles.link} onClick={() => signOut()}>Logout</span>
             </>
         )}
@@ -35,12 +34,11 @@ const AuthLinks = () => {
                 <Link href="/">Home</Link>
                 <Link href="/">Contact</Link>
                 <Link href="/">About</Link>
-                {status === "unauthenticated" ? (
+                {session.status === "unauthenticated" ? (
                     <Link href="/login">Login</Link>
                 ) : (
                     <>
-                        <Link href="/write">Write</Link>
-                        <span className={styles.link}>Logout</span>
+                        <span className={styles.link} onClick={() => signOut()}>Logout</span>
                     </>
                 )}
             </div>

@@ -1,3 +1,4 @@
+import { slugify } from "../utils/utils";
 
 /**
  * Fetch to get posts.
@@ -5,8 +6,9 @@
  * @param cat  category of posts to filter if any.
  * @returns 3 posts from the selected page and of the category selected.
  */
-export const getPosts = async (page: number, cat: String) => {
-    const res = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
+export const getPosts = async (page: number, cat: string, popular: boolean) => {
+    const url = `http://localhost:3000/api/posts?page=${page}` + (cat ? `&cat=${cat}` : "") + (popular ? `&popular=true` : "");
+    const res = await fetch(url, {
         cache: "no-store"
     });
 
@@ -38,7 +40,7 @@ export const getCategories = async () => {
  * @param slug param to get specific post.
  * @returns specific post.
  */
-export const getPost = async (slug: String) => {
+export const getPost = async (slug: string) => {
     const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
         cache: "no-store"
     });
@@ -59,4 +61,24 @@ export const postComment = async (desc, postSlug, mutate) => {
         body: JSON.stringify({ desc, postSlug })
     });
     mutate();
+}
+
+/**
+ * Creates the new post and uploads it to mongodb.
+ * @param title title of the post.
+ * @param cat category of the post.
+ * @param value content of the post.
+ * @param media media that the post contains.
+ */
+export const postPost = async (title: string, cat: string, value: string, media: string) => {
+    await fetch("/api/posts", {
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            catSlug: "hempidle",
+            desc: value,
+            img: media,
+            slug: slugify(title),
+        })
+    });
 }

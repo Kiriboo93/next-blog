@@ -14,9 +14,9 @@ const Card = ({ post }: { post: CustomPost }) => {
     const date: Date = new Date(post?.createdAt);
 
     return (
-        <div className={styles.container} key={post?.id}>
+        <div className={styles.container}>
             {post?.img && <div className={styles.imgContainer}>
-                <Image src={post?.img} alt="Post image" fill className={styles.image} />
+                <Image src={post?.img} alt="Post image" fill sizes="344px" unoptimized={true} className={styles.image} />
             </div>}
             <div className={styles.textContainer}>
                 <div className={styles.detail}>
@@ -25,7 +25,7 @@ const Card = ({ post }: { post: CustomPost }) => {
                     <span className={styles.category}>{post?.catSlug.toUpperCase()}</span>
                 </div>
                 <Link href={`/posts/${post?.slug}`}>
-                    <h1>{post?.title}</h1>
+                    <h1 className={styles.title}>{post?.title}</h1>
                 </Link>
                 <p className={styles.description}>
                     {removeHtmlTags(post?.desc.slice(0, 200)) + "..."}

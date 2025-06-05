@@ -4,38 +4,45 @@
     height: 43rem;
 }
 
-.button,
-.addButton {
+.button {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid var(--textColor);
+    border: 1px solid 000;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-.addButton {
-    border-color: #1a8917;
+.buttonDiv {
+    background-color: azure;
+    border-radius: 1rem;
+    padding: .5rem;
+    height: fit-content;
 }
 
 .add {
     display: flex;
     gap: 1.2rem;
-    background-color: var(--bg);
-    position: absolute;
+    height: fit-content;
+    background-color: azure;
+    border-radius: 1rem;
+    padding: .5rem;
+    position: relative;
     z-index: 999;
-    width: 100%;
-    left: 3rem;
+}
+
+.inputButton {
+    display: none;
 }
 
 .input {
-    padding: 1rem;
+    padding: .75rem;
     margin-bottom: 2rem;
     width: 100%;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     border: 1px solid #b3b3b1;
     border-radius: .3rem;
     outline: none;
@@ -43,7 +50,20 @@
     color: var(--textColor);
 }
 
-.input::placeholder {
+.inputCat {
+    padding: .5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    font-size: 1.5rem;
+    border: 1px solid #b3b3b1;
+    border-radius: .3rem;
+    outline: none;
+    background-color: transparent;
+    color: var(--textColor);
+}
+
+.input::placeholder,
+.inputCat::placeholder {
     color: #b3b3b1;
 }
 
@@ -63,4 +83,8 @@
     color: white;
     cursor: pointer;
     border-radius: 1.2rem;
+}
+
+.labelInput {
+    cursor: pointer;
 }

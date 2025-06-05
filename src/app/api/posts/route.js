@@ -1,6 +1,7 @@
 import { prisma } from "../../../utils/connect";
 import { NextResponse } from "next/server";
 import { POSTS_PER_PAGE } from "../../../utils/utils";
+import { getAuthSession } from "../../../utils/auth";
 
 /**
  * Service to get list of post paginated.
@@ -12,6 +13,7 @@ export const GET = async (req) => {
 
     const page = parseInt(searchParams.get("page"));
     const cat = searchParams.get("cat");
+    const popular = searchParams.get("popular");
 
     const query = {
         take: POSTS_PER_PAGE,
@@ -19,6 +21,14 @@ export const GET = async (req) => {
         where: {
             ...(cat && { catSlug: cat }),
         },
+        orderBy: [
+            {
+                ...(popular && { views: 'desc' })
+            },
+            {
+                createdAt: 'desc'
+            }
+        ]
     }
 
     try {
@@ -28,6 +38,36 @@ export const GET = async (req) => {
         ]);
         return new NextResponse(
             JSON.stringify({ posts, count })
+        );
+    } catch (err) {
+        console.log(err);
+        return new NextResponse(
+            JSON.stringify({ message: "Something went wrong!" })
+        );
+    }
+}
+
+/**
+ * Service to create a new post.
+ * @param {*} req param to get post body
+ * @returns post created if correct or error if not.
+ */
+export const POST = async (req) => {
+    const session = await getAuthSession();
+
+    if (!session) {
+        return new NextResponse(
+            JSON.stringify({ message: "Something went wrong!" })
+        );
+    }
+
+    try {
+        const body = await req.json();
+        const post = await prisma.post.create({
+            data: { ...body, userEmail: session.user.email }
+        });
+        return new NextResponse(
+            JSON.stringify(post)
         );
     } catch (err) {
         console.log(err);
